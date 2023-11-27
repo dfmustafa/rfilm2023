@@ -1,5 +1,4 @@
-import { AuthProvider } from '../auth/providers/auth_provider';
-
+import { AuthProvider } from '../auth/providers/auth_provider' 
 const RootProvider = ({ children }) => {
   return (
     <AuthProvider>
