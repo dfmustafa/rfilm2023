@@ -23,7 +23,7 @@ const HomeView = () => {
         {Array.from({ length: 10 }).map((_, index) => (
           <AppSwiperSlide key={index}>
             <div>
-              <div style={{ width: 250, height: 150, backgroundColor: 'red' }} /> 
+              <div style={{ width: 250, height: 150, backgroundColor: 'red' ,}} /> 
               <h3> {index + 1}</h3>
             </div>
           </AppSwiperSlide>
