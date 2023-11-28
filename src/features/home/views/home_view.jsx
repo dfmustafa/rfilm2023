@@ -3,35 +3,43 @@ import { useAuth } from '../../../core/auth/hook/use_auth'
 import AppButton from '../../../core/components/app_button/app_button';
 import { AppSwiper } from '../../../core/components/app_swiper/components/app_swiper';
 import  AppSwiperSlide  from '../../../core/components/app_swiper/components/app_swiper_slide';
-
+import { getPopularMovies } from '../services/movies.services';
+import useSWR from 'swr';
 const HomeView = () => {
 
-  const {isLoggedIn, logout} = useAuth();
+  const {logout} = useAuth();
 
-  console.log(import.meta.env.VITE_TMDB_API_KEY);
-  
-  const showAlert = () => {
-    alert('alerta');
-  }
+  getPopularMovies()
+  const {data} = useSWR('popularMovies', getPopularMovies);
+console.log('data',data);
 
   return (
     <div>
-      <h1>HOME VIEW</h1>  
+      <h1>Peliculas populares</h1>  
 
       <AppSwiper>
    
-        {Array.from({ length: 10 }).map((_, index) => (
+        {data?.map((e, index) => (
           <AppSwiperSlide key={index}>
-            <div>
-              <div style={{ width: 250, height: 150, backgroundColor: 'red' ,}} /> 
-              <h3> {index + 1}</h3>
-            </div>
+            
+              <div 
+                style={{ 
+                width: 250, 
+                height: 150,
+                backgroundColor: 'red',
+                backgroundImage: `url(${e.backdrop})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'contain',
+                }} 
+              > 
+                <h3 style={{color: 'white',backgroundColor: 'GrayText'}}> {e.title}</h3>
+              </div>
+            
           </AppSwiperSlide>
         ))}
       
       </AppSwiper>
-
-      <AppButton onClick={showAlert}>alerta</AppButton>  
     
       <AppButton onClick={logout}>Logout</AppButton>      
    

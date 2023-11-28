@@ -20,3 +20,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  color: white;
+}
