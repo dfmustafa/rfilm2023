@@ -7,12 +7,9 @@ export const AppSwiper = ({children}) => {
   return (
     <swiper-container
       ref={swiperElRef}
-      slides-per-view="5"
-      padding-between="10"
-      centered-slides
+      slides-per-view="5"     
       loop
-      navigation="true"     
-
+      navigation="true"  
     >
       {children}
     </swiper-container>        
