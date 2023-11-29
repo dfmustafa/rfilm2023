@@ -1,9 +1,74 @@
 import React from 'react'
+import { Header, Body, Footer } from './components';
+import { Provider } from './provider/card_context';
+import useHover from '../../hooks/useHover';
 
-const AppCard = () => {
+const image = {
+  show: false 
+}
+
+const defaultConfig={
+  image 
+};
+const AppCard = ({ 
+  config = defaultConfig,
+  children,
+  width = '250px',
+  height = '150px',
+  backgroundImageSrc = undefined,
+  aspectRatio = undefined,
+  borderRadius = '5px',
+  borderColor = "#ccc",   
+  ...props
+  }) => {
+
+ const [isHovered, handlers ] = useHover();
+
   return (
-    <div>AppCard</div>
+    <Provider 
+      value={{
+        isHovered,
+    }} >
+    <article    
+       {...handlers}
+       {...props}
+      style=
+        {{          
+          display: 'flex',
+          position: 'relative', 
+          flexDirection: 'column', 
+          justifyContent: 'space-between',
+          aspectRatio ,
+          width ,
+          height,
+          overflow: 'hidden',
+          borderRadius,
+          borderColor,
+          borderStyle: 'solid',
+          ...props.style,   
+          }}
+         
+    >
+    { config.image.show && (
+      <img 
+        style={{
+            position: 'absolute',
+            top: 0, 
+            left: 0,            
+            objectFit: 'cover', 
+            zIndex: -1
+          }}         
+          src= {backgroundImageSrc}
+          alt= 'imagen de pelicula'
+          />)}
+      {children}
+    </article>
+    </Provider>
   )
 }
+
+AppCard.Header = Header;
+AppCard.Body = Body;
+AppCard.Footer = Footer;
 
 export default AppCard
