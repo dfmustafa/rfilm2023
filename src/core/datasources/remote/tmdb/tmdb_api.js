@@ -19,7 +19,7 @@ export const tdmb_api = axios.create({
       airing_today: "/tv/airing_today",
     },
     images: {
-      poster: {
+      poster: { 
         sizes: {
           w92: "/w92",
           w154: "/w154",

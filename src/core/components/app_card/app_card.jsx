@@ -18,7 +18,7 @@ const AppCard = ({
   backgroundImageSrc = undefined,
   aspectRatio = undefined,
   borderRadius = '5px',
-  borderColor = "#ccc",   
+  borderColor = "red",   
   ...props
   }) => {
 

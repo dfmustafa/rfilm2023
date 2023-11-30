@@ -7,6 +7,7 @@ import { getPopularMovies, getTopRatedMovies } from '../services/movies.services
 import useSWR from 'swr';
 import AppCarouselSection from '../../../core/components/app_carousel_section/app_carrosel_section';
 import AppCard from '../../../core/components/app_card/app_card';
+import AppNavbar from '../../../core/components/app_navbar/app_navbar';
 const HomeView = () => {
 
   const {logout} = useAuth();
@@ -22,29 +23,24 @@ const HomeView = () => {
           error: topRatedMoviewError,
           isLoading: topRatedMoviesLoading
         } = useSWR('topRatedMovies', getTopRatedMovies);
-
  
   return (
     <div>
-     <AppButton onClick={logout}>Logout</AppButton>     
-     <AppCarouselSection title={"Peliculas mejor puntuadas"} data={topRatedMovies} />    
-     <AppCarouselSection title={"Peliculas populares"} data={popularMovies} />     
-    
+    <AppNavbar/>   
+      
     <AppCard 
-      config= {{
-        image: {
-          show: true
-        }
-      }} 
-      width="250px" 
-      height="150px" 
-      backgroundImageSrc={"https://picsum.photos/250/150"}
+      config= {{ image: { show: true} }}
+      width="100%" 
+      height="400px" 
+      backgroundImageSrc={"https://picsum.photos/1600/400"}
       data = {""}>
      <AppCard.Header>header</AppCard.Header>
-     <AppCard.Body>body</AppCard.Body>
-     <AppCard.Footer>footer</AppCard.Footer>
+     
     </AppCard>
-
+ 
+     <AppCarouselSection title={"Peliculas mejor puntuadas"} data={topRatedMovies} />    
+     <AppCarouselSection title={"Peliculas populares"} data={popularMovies} />     
+  
     </div>
   )
 }
