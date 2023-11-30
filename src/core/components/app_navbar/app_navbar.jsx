@@ -6,9 +6,7 @@ import Button from '@mui/material/Button';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import '@fontsource/roboto';  
 import { useAuth } from '../../auth/hook/use_auth';
-
 export default function AppNavbar() {
-
   
   const {logout} = useAuth();
 

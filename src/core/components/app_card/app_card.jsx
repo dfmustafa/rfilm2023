@@ -19,6 +19,7 @@ const AppCard = ({
   aspectRatio = undefined,
   borderRadius = '5px',
   borderColor = "red",   
+  
   ...props
   }) => {
 
