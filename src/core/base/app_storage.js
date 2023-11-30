@@ -1,11 +1,14 @@
-export class appStorage {
+export class AppStorage {
     static setItem(key, value) {
-        localStorage.setItem(key, value);
+        return localStorage.setItem(key, JSON.stringify(value));
     }
     static getItem(key) {
-        return localStorage.getItem(key);
+        return JSON.parse(localStorage.getItem(key));
     }
     static removeItem(key) {
-        localStorage.removeItem(key);
+        return localStorage.removeItem(key);
     }
+    static async clear() {
+        return localStorage.clear();
+      }
 }

@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
-import '@fontsource/roboto';  // Asegúrate de agregar esta línea
+import '@fontsource/roboto';  
 import { useAuth } from '../../auth/hook/use_auth';
 
 export default function AppNavbar() {
