@@ -9,7 +9,7 @@ const Header = ({children, ...props}) => {
     <section     
       {...props} 
       style={{ 
-        padding : "10px" , 
+        padding : "8px" , 
         borderBottom : "1px solid #ccc",
         backdropFilter : "blur(2px)", 
         opacity : isHovered ? 1 : 0,

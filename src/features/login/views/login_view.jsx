@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useAuth } from '../../../core/auth/hook/use_auth';
 import { Button } from '@mui/material';
 import '@fontsource/roboto';  
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+
 const LoginView = (e) => {
   const { login, isLoggedIn } = useAuth();
   const handleSubmit = (e) => {
@@ -23,6 +25,7 @@ const LoginView = (e) => {
       color: 'red',
       fontFamily: 'roboto,Arial, sans-serif'
     }}>
+    <LiveTvIcon sx={{ fontSize: 40, color: 'red', marginRight: 1 }} />
       <h1 style={{
         fontSize: '2rem',
         marginBottom: '2rem'

@@ -1,14 +1,18 @@
 import React from 'react'
-
-const AppTitle = ({children, ...props}) => {
+import { sizes } from '../../constants'
+const AppTitle = ({children,size=sizes.sm, ...props}) => {
   return (
     <h2 {...props}
     style=
       {{
-        fontSize: '2rem',
+        fontSize: size,
         fontWeight: 'bold',
         color: 'white',
-        textAlign: 'left'       
+        margin: "0 0 0.5rem 0",
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        ...props.style
     }}> 
     {children}
     </h2>

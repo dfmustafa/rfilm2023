@@ -13,8 +13,8 @@ const defaultConfig={
 const AppCard = ({ 
   config = defaultConfig,
   children,
-  width = '250px',
   height = '150px',
+  width = '300px',  
   backgroundImageSrc = undefined,
   aspectRatio = undefined,
   borderRadius = '5px',
@@ -45,7 +45,7 @@ const AppCard = ({
           overflow: 'hidden',
           borderRadius,
           borderColor,
-          borderStyle: 'solid',
+          borderStyle: 'solid',          
           ...props.style,   
           }}
          
@@ -54,6 +54,8 @@ const AppCard = ({
       <img 
         style={{
             position: 'absolute',
+            width: "100%",
+             height: "100%",
             top: 0, 
             left: 0,            
             objectFit: 'cover', 

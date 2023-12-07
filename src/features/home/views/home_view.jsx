@@ -25,12 +25,13 @@ const HomeView = () => {
           
         <AppCard 
           config= {{ image: { show: true} }}
-          width="100%" 
           height="400px" 
+          width="100%" 
+          
           backgroundImageSrc={"https://picsum.photos/1600/400"}
           data = {""}>
         <AppCard.Header>header</AppCard.Header>
-        
+        <AppCard.Footer>footer</AppCard.Footer>
         </AppCard>   
         
         <AppCarouselSection title={"Peliculas mejor puntuadas"} data={topRatedMovies} />    
