@@ -1,13 +1,20 @@
 import React from 'react'
-import { getPopularMovies, getTopRatedMovies } from '../services/movies.services';
 import useSWR from 'swr';
+
+
+import { UseModal } from '../../../core/components/app_modal/hook/use_modal';
+import { getPopularMovies, getTopRatedMovies } from '../services/movies.services';
+
 import AppCarouselSection from '../../../core/components/app_carousel_section/app_carrosel_section';
 import AppCard from '../../../core/components/app_card/app_card';
 import AppNavbar from '../../../core/components/app_navbar/app_navbar';
 import AppFooter from '../../../core/components/app_footer/app_footer';
+import AppModal from '../../../core/components/app_modal/app_modal';
+
+
 const HomeView = () => {
 
-  getPopularMovies();
+  const {isOpen, openModal, closeModal} = UseModal();
 
   const { data: popularMovies,
           error: popularMoviewError,
@@ -30,16 +37,34 @@ const HomeView = () => {
           
           backgroundImageSrc={"https://picsum.photos/1600/400"}
           data = {""}>
-        <AppCard.Header>header</AppCard.Header>
-        <AppCard.Footer>footer</AppCard.Footer>
+          <AppCard.Header>header</AppCard.Header>
+          <AppCard.Footer>footer</AppCard.Footer>
         </AppCard>   
         
         <AppCarouselSection title={"Peliculas mejor puntuadas"} data={topRatedMovies} />    
         <AppCarouselSection title={"Peliculas populares"} data={popularMovies} />    
-              
-        <AppFooter/>
+
+        <button onClick={openModal}>Open Modal</button>
+        <AppModal 
+          open={isOpen} 
+          onClicketOut={closeModal}
+        >
+          <div
+            style={{
+              height: "300px", 
+              width: "300px",
+              backgroundColor: "red",
+              color : "white",
+             }}
+              >
+              <button onClick={closeModal}>Close Modal</button>
+            HOLA 
+          </div>
+        </AppModal>
+
+        <AppFooter />
    
-    
+
     </div>
   )
 }
