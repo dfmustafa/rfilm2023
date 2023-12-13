@@ -14,12 +14,12 @@ const AppCard = ({
   config = defaultConfig,
   children,
   height = '150px',
-  width = '300px',  
+  width = '350px',  
   backgroundImageSrc = undefined,
   aspectRatio = undefined,
-  borderRadius = '5px',
-  borderColor = "red",   
-  
+  borderRadius = '6px',
+  borderColor = 'red',   
+  borderStyle = 'none',
   ...props
   }) => {
 
@@ -41,14 +41,16 @@ const AppCard = ({
           justifyContent: 'space-between',
           aspectRatio ,
           width ,
-          height,
-          overflow: 'hidden',
+          height,          
           borderRadius,
-          borderColor,
-          borderStyle: 'solid',          
+          borderColor,          
+          borderStyle: 'none' , 
+          transform: isHovered ? "scale(1.05)" : "scale(1)",  
+          transition: "transform 0.2s ease-in-out",        
+          overflow: 'hidden', 
+                
           ...props.style,   
-          }}
-         
+          }}         
     >
     { config.image.show && (
       <img 

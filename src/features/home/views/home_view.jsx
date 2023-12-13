@@ -5,7 +5,7 @@ import useSWR from 'swr';
 import { UseModal } from '../../../core/components/app_modal/hook/use_modal';
 import { getPopularMovies, getTopRatedMovies } from '../services/movies.services';
 
-import AppCarouselSection from '../../../core/components/app_carousel_section/app_carrosel_section';
+import AppCarouselSection from '../../../core/components/app_carousel_section/app_carousel_section';
 import AppCard from '../../../core/components/app_card/app_card';
 import AppNavbar from '../../../core/components/app_navbar/app_navbar';
 import AppFooter from '../../../core/components/app_footer/app_footer';

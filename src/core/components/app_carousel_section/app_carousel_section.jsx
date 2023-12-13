@@ -18,6 +18,7 @@ const AppCarouselSection = ({title, data}) => {
                   width="300px"                   
                   backgroundImageSrc={e.backdrop}
                   data = {""}
+                  
                   >
                 <AppCard.Header>
                   <AppTitle size={sizes.sm}> { e.title}</AppTitle>
