@@ -12,7 +12,9 @@ const AppTitle = ({children,size=sizes.sm, ...props}) => {
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
         overflow: 'hidden',
-        ...props.style
+        ...props.style,
+       marginBottom: '10px' ,
+     
     }}> 
     {children}
     </h2>

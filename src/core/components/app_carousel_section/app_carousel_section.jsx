@@ -5,9 +5,9 @@ import AppTitle from '../app_title/app_title'
 import AppCard from '../app_card/app_card'
 import { sizes } from '../../constants'
 
-const AppCarouselSection = ({title, data}) => {
+const AppCarouselSection = ({title, data,style  }) => {
   return (
-    <>         
+    <div className="app-carousel-section" style={style}>  
         <AppTitle>{title}</AppTitle>
         <AppSwiper>   
         {data?.map((e) => (
@@ -24,11 +24,16 @@ const AppCarouselSection = ({title, data}) => {
                   <AppTitle size={sizes.sm}> { e.title}</AppTitle>
                 </AppCard.Header>
                 <AppCard.Footer>footer</AppCard.Footer>
-              </AppCard>           
+               
+              </AppCard>    
+              <div
+               style={{textAlign: 'center'}}>
+                {e.title}
+              </div>       
             </AppSwiperSlide>           
         ))}      
         </AppSwiper>
-    </>
+        </div>
   )
 }
 
