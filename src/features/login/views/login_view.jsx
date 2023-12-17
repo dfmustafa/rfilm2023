@@ -20,8 +20,8 @@ const LoginView = (e) => {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      height: '100vh',
-      backgroundColor: '#000',
+      height: '100vh',     
+      backgroundColor: '#242424',
       color: 'red',
       fontFamily: 'roboto,Arial, sans-serif'
     }}>
@@ -44,6 +44,7 @@ const LoginView = (e) => {
           padding: '0.5rem',
           fontSize: '1rem'
         }} type="text" name="email" placeholder="Usuario" />
+        
         <input style={{
           width: '300px',
           height: '40px',
@@ -51,13 +52,14 @@ const LoginView = (e) => {
           padding: '0.5rem',
           fontSize: '1rem'
         }} type="password" name="password" placeholder="Contraseña" />
+        
         <Button type="submit"
             variant="outlined"
             color="error"
             sx={{ marginLeft: 2 }}
-          >
-            Login
-          </Button>
+        >
+          Login
+        </Button>
       </form>
     </div>
   );

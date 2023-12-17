@@ -12,7 +12,7 @@ export default function AppNavbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ background: '#000' }}>
+      <AppBar position="static" sx={{ background: '#242424',  boxShadow: 'none'  }}>
         <Toolbar >
         <LiveTvIcon sx={{ fontSize: 40, color: 'red', marginRight: 1 }} />
     

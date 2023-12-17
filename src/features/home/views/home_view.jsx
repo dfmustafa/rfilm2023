@@ -45,7 +45,11 @@ const HomeView = () => {
           style={{ marginBottom: '20px' }}
           />    
       
-        <AppCarouselSection title={"Peliculas populares"} data={popularMovies} />    
+        <AppCarouselSection 
+          title={"Peliculas populares"} 
+          data={popularMovies} 
+          style={{ marginBottom: '20px' }} 
+          />    
 
         <AppFooter />
 

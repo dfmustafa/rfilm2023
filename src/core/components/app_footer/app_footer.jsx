@@ -9,10 +9,9 @@ export default function AppFooter() {
   return (
     <div>
      
-       <AppBar position="static" color="primary" sx={{ top: 'auto', bottom: 0, background: '#000' }} >
+       <AppBar position="static" sx={{ top: 'auto', bottom: 0, background: '#242424', marginTop: '20px',  boxShadow: 'none' }} >
         <Toolbar>                   
-          <Box sx={{ flexGrow: 1 }} />        
-          
+          <Box sx={{ flexGrow: 1 }} /> 
         </Toolbar>
       </AppBar>
     </div>
