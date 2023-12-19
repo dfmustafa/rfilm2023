@@ -14,8 +14,7 @@ export default function AppNavbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ background: '#242424',  boxShadow: 'none'  }}>
         <Toolbar >
-        <LiveTvIcon sx={{ fontSize: 40, color: 'red', marginRight: 1 }} />
-    
+        <LiveTvIcon sx={{ fontSize: 40, color: 'red', marginRight: 1 }} />    
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, color: 'red', fontWeight: 'bold'  }}>
             REACT FILM
           </Typography>

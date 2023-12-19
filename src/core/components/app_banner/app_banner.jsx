@@ -5,12 +5,13 @@ const AppBanner = ({ data }) => {
   return (
     <Card 
      sx={{
-        backgroundColor: '#242424', // Cambia al color de fondo deseado
-        color: 'rgba(255, 255, 255, 0.9)', // Cambia al color de texto deseado
+        backgroundColor: '#242424',
+        color: 'rgba(255, 255, 255, 0.9)',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'left', // Centra los elementos horizontalmente
-        padding: '15px', // Ajusta el espaciado interior
+        alignItems: 'left',
+        padding: '15px', 
+        boxShadow: 'none'
       }}
     >
       <CardMedia

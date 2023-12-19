@@ -40,8 +40,7 @@ const HomeView = () => {
 
       <AppNavbar/>
 
-      <AppBanner data={{title:"titulo de la pelicula" , backdrop:"https://picsum.photos/1600/400"  }} style={{ color:red }}/>
-
+      
        {/*} 
       <AppCard 
         config= {{ image: { show: true} }}
@@ -53,11 +52,13 @@ const HomeView = () => {
         <AppCard.Footer>footer</AppCard.Footer>
       </AppCard>   
       */}
+
+      <AppBanner data={{title:"titulo de la pelicula" , backdrop:"https://picsum.photos/1600/400"  }} style={{ color:red }}/>
       
       {/*>>>>>>>>>>MOVIES<<<<<<<<<*/}
 
       <AppCarouselSection 
-        title={"Peliculas mejor puntuadas"} data={topRatedMovies}  style={{ color:red }}
+        title={"Peliculas mejor puntuadas"} data={topRatedMovies}  style={{ color:red , marginTop: '20px' }}
       />
       <AppCarouselSection 
         title={"Peliculas populares"} data={popularMovies}
