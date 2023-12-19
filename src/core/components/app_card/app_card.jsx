@@ -18,7 +18,7 @@ const AppCard = ({
   backgroundImageSrc = undefined,
   aspectRatio = undefined,
   borderRadius = '6px',
-  borderColor = 'red',   
+  borderColor = 'grey',   
   borderStyle = 'none',
   ...props
   }) => {
@@ -44,7 +44,7 @@ const AppCard = ({
           height,          
           borderRadius,
           borderColor,          
-          borderStyle: 'none' , 
+          borderStyle: isHovered ? 'solid' : 'none' , 
           margin: '8px',
           transform: isHovered ? "scale(1.10)" : "scale(1)",  
           transition: "transform 0.2s ease-in-out",        
@@ -58,7 +58,7 @@ const AppCard = ({
         style={{
             position: 'absolute',
             width: "100%",
-             height: "100%",
+            height: "100%",
             top: 0, 
             left: 0,            
             objectFit: 'cover', 

@@ -15,7 +15,7 @@ export default function AppFooter() {
        <AppBar position="static" sx={{ top: 'auto', bottom: 0, background: '#242424', marginTop: '20px',  boxShadow: 'none' }} >
         <Toolbar>                   
           <Box sx={{ flexGrow: 1 }} /> 
-          <div>REACT FILM ©{currentYear}</div>
+          <div  style={{ color: 'red' }}>REACT FILM ©{currentYear}</div>
         </Toolbar>
       </AppBar>
     </div>

@@ -10,6 +10,8 @@ import AppCard from '../../../core/components/app_card/app_card';
 import AppNavbar from '../../../core/components/app_navbar/app_navbar';
 import AppFooter from '../../../core/components/app_footer/app_footer';
 import AppModal from '../../../core/components/app_modal/app_modal';
+import { red } from '@mui/material/colors';
+import AppBanner from '../../../core/components/app_banner/app_banner';
 
 const HomeView = () => {
 
@@ -34,10 +36,13 @@ const HomeView = () => {
   } = useSWR('airingTodayTv', getAiringTodayTv);
 
   return (
-    <div style={{ margin: '10px' }}>
+    <div style={{  margin: '5px'  }}>
 
-      <AppNavbar/>   
-        
+      <AppNavbar/>
+
+      <AppBanner data={{title:"titulo de la pelicula" , backdrop:"https://picsum.photos/1600/400"  }} style={{ color:red }}/>
+
+       {/*} 
       <AppCard 
         config= {{ image: { show: true} }}
         height="400px" 
@@ -47,29 +52,30 @@ const HomeView = () => {
         <AppCard.Header>header</AppCard.Header>
         <AppCard.Footer>footer</AppCard.Footer>
       </AppCard>   
+      */}
       
       {/*>>>>>>>>>>MOVIES<<<<<<<<<*/}
 
       <AppCarouselSection 
-        title={"Peliculas mejor puntuadas"} data={topRatedMovies} style={{ marginBottom: '20px' }}
+        title={"Peliculas mejor puntuadas"} data={topRatedMovies}  style={{ color:red }}
       />
       <AppCarouselSection 
-        title={"Peliculas populares"} data={popularMovies} style={{ marginBottom: '20px' }} 
+        title={"Peliculas populares"} data={popularMovies}
       />  
       <AppCarouselSection 
-        title={"Proximos lanzamientos"} data={upcomingMovies} style={{ marginBottom: '20px' }} 
+        title={"Proximos lanzamientos"} data={upcomingMovies} 
       />  
 
     {/*>>>>>>>>>>SERIES<<<<<<<<<*/}
 
       <AppCarouselSection 
-        title={"Tv populares"} data={popularTv} style={{ marginBottom: '20px' }} 
+        title={"Tv populares"} data={popularTv} 
       />
       <AppCarouselSection
-        title={"Tv mejor puntuadas"} data={topRatedTv} style={{ marginBottom: '20px' }}
+        title={"Tv mejor puntuadas"} data={topRatedTv} 
       />
       <AppCarouselSection
-        title={"En emisión hoy!"} data={airingToday} style={{ marginBottom: '20px' }}
+        title={"En emisión hoy!"} data={airingToday} 
       />
 
       {/*>>>>>>>>>>FOOTER<<<<<<<<<*/}
