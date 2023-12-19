@@ -36,7 +36,7 @@ const HomeView = () => {
   } = useSWR('airingTodayTv', getAiringTodayTv);
 
   return (
-    <div style={{  margin: '5px'  }}>
+    <div style={{  margin: '6px'  }}>
 
       <AppNavbar/>
 
@@ -58,25 +58,25 @@ const HomeView = () => {
       {/*>>>>>>>>>>MOVIES<<<<<<<<<*/}
 
       <AppCarouselSection 
-        title={"Peliculas mejor puntuadas"} data={topRatedMovies}  style={{ color:red , marginTop: '20px' }}
+        title={"Peliculas mejor puntuadas>"} data={topRatedMovies}  style={{ color:red , marginTop: '40px' }}
       />
       <AppCarouselSection 
-        title={"Peliculas populares"} data={popularMovies}
+        title={"Peliculas populares>"} data={popularMovies}
       />  
       <AppCarouselSection 
-        title={"Proximos lanzamientos"} data={upcomingMovies} 
+        title={"Proximos lanzamientos>"} data={upcomingMovies} 
       />  
 
     {/*>>>>>>>>>>SERIES<<<<<<<<<*/}
 
       <AppCarouselSection 
-        title={"Tv populares"} data={popularTv} 
+        title={"Tv populares>"} data={popularTv}   style={{  marginTop: '40px' }}
       />
       <AppCarouselSection
-        title={"Tv mejor puntuadas"} data={topRatedTv} 
+        title={"Tv mejor puntuadas>"} data={topRatedTv} 
       />
       <AppCarouselSection
-        title={"En emisión hoy!"} data={airingToday} 
+        title={"En emisión hoy!>"} data={airingToday} 
       />
 
       {/*>>>>>>>>>>FOOTER<<<<<<<<<*/}
