@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useSWR from 'swr';
 
 import { UseModal } from '../../../core/components/app_modal/hook/use_modal';
@@ -17,43 +17,56 @@ const HomeView = () => {
 
   const {isOpen, openModal, closeModal} = UseModal();
 
-  const {data: popularMovies, error: popularMoviewError, isLoading: popularMoviesLoading 
+  const {data: popularMovies, error: popularMoviewError, isLoading: isLoadingPopularMovies
   } = useSWR('popularMovies', getPopularMovies);
 
-  const { data: topRatedMovies, error: topRatedMoviewError, isLoading: topRatedMoviesLoading
+  const { data: topRatedMovies, error: topRatedMoviewError, isLoading: isLoadinTopRatedMovies
   } = useSWR('topRatedMovies', getTopRatedMovies);
 
-  const { data: upcomingMovies, error: upcomingMoviewError, isLoading: upcomingMoviesLoading
+  const { data: upcomingMovies, error: upcomingMoviewError, isLoading: isLoadingUpcomingMovies
   } = useSWR('upcomingMovies', getUpcomingMovies);
  
-  const { data: popularTv, error: popularTvError, isLoading: popularTvLoading
+  const { data: popularTv, error: popularTvError, isLoading: isLoadingPopularTv
   } = useSWR('popularTv', getPopularTv);
 
-  const { data: topRatedTv, error: topRatedTvError, isLoading: topRatedTvLoading
+  const { data: topRatedTv, error: topRatedTvError, isLoading: isLoadingTopRatedTv
   } = useSWR('topRatedTv', getTopRatedTv);
 
-  const { data: airingToday, error: airingTodayTvError, isLoading: airingTodayTvLoading
+  const { data: airingToday, error: airingTodayTvError, isLoading: isLoadingAiringTodayTv
   } = useSWR('airingTodayTv', getAiringTodayTv);
 
+  const [dataBanner, setDataBanner] = useState(null);
+  
+  useEffect(() => {
+    const getRandomMovieORTv = () => {
+
+      const random = Math.random() * 10;
+
+      if (isLoadingPopularMovies || isLoadingPopularTv) return;
+
+      const obtenerElementoAleatorio = (array) => {
+        const indiceAleatorio = Math.floor(Math.random() * array.length);
+        return array[indiceAleatorio];
+      };
+
+      const elementoAleatorio = random > 5
+      ?  obtenerElementoAleatorio(popularMovies)
+      : obtenerElementoAleatorio(popularTv);
+
+      return elementoAleatorio;     
+    }
+    
+    const randomMovieOrTv= getRandomMovieORTv();
+    setDataBanner(randomMovieOrTv);
+      
+  },[isLoadingPopularMovies, isLoadingPopularTv, popularMovies, popularTv]);
+  
   return (
     <div style={{  margin: '6px'  }}>
 
       <AppNavbar/>
 
-      
-       {/*} 
-      <AppCard 
-        config= {{ image: { show: true} }}
-        height="400px" 
-        width="100%"           
-        backgroundImageSrc={"https://picsum.photos/1600/400"}
-        data = {""}>
-        <AppCard.Header>header</AppCard.Header>
-        <AppCard.Footer>footer</AppCard.Footer>
-      </AppCard>   
-      */}
-
-      <AppBanner data={{title:"titulo de la pelicula" , backdrop:"https://picsum.photos/1600/400"  }} style={{ color:red }}/>
+      <AppBanner data={{title: dataBanner?.title , backdrop: dataBanner?.backdrop  }} style={{ color:red }}/>
       
       {/*>>>>>>>>>>MOVIES<<<<<<<<<*/}
 
@@ -88,6 +101,26 @@ const HomeView = () => {
 }
 
 export default HomeView;
+
+      
+
+
+
+
+
+
+
+       {/*} 
+      <AppCard 
+        config= {{ image: { show: true} }}
+        height="400px" 
+        width="100%"           
+        backgroundImageSrc={"https://picsum.photos/1600/400"}
+        data = {""}>
+        <AppCard.Header>header</AppCard.Header>
+        <AppCard.Footer>footer</AppCard.Footer>
+      </AppCard>   
+      */}
 
 /*
  <button onClick={openModal}>Open Modal</button>
