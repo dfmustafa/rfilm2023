@@ -66,7 +66,7 @@ const HomeView = () => {
 
       <AppNavbar/>
 
-      <AppBanner data={{title: dataBanner?.title , backdrop: dataBanner?.backdrop  }} style={{ color:red }}/>
+      <AppBanner data={dataBanner} style={{ color:red }}/>
       
       {/*>>>>>>>>>>MOVIES<<<<<<<<<*/}
 

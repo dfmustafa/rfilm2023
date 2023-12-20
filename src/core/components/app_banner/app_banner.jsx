@@ -23,7 +23,7 @@ const AppBanner = ({ data }) => {
       />
       <CardHeader title={data?.title} />
       <CardContent>
-       description
+        {data?.description}
       </CardContent>
       <CardActions sx={{ alignSelf: 'flex-start', paddingLeft: 2 }}>
         <Button size="small" color='primary' style={{ color: '#fff', backgroundColor: '#e50914' }}>+</Button>
