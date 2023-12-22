@@ -5,7 +5,22 @@ import AppTitle from '../app_title/app_title'
 import AppCard from '../app_card/app_card'
 import { sizes, colors } from '../../constants'
 
+
+import Button from '@mui/material/Button';
+import useModal from '../app_modal/hook/useModal'
+import AppModal from '../app_modal/app_modal'
 const AppCarouselSection = ({title, data, style  }) => {
+
+  const { isOpen, openModal, closeModal } = useModal();
+
+  const handleOpenModal = () => {
+    openModal();
+  };
+
+  const handleCloseModal = () => {
+    closeModal();
+  };
+ 
   return (
     <div className="app-carousel-section" style={style}>  
         <AppTitle size={sizes.lg} micolor={colors.red}>{title}</AppTitle>
@@ -22,7 +37,11 @@ const AppCarouselSection = ({title, data, style  }) => {
                 <AppCard.Header>
                   <AppTitle  size={sizes.sm} micolor={colors.white}> { e.title}</AppTitle>
                 </AppCard.Header>
-                <AppCard.Footer>footer</AppCard.Footer>
+                <AppCard.Footer>footer
+               
+               
+                   
+                </AppCard.Footer>
                
               </AppCard>    
               <div
@@ -38,6 +57,13 @@ const AppCarouselSection = ({title, data, style  }) => {
                   overflowWrap: 'break-word' }}
               >
                 {e.title}
+
+                <div>
+      <Button onClick={handleOpenModal} style={{ backgroundColor: '#E50914', color: '#FFF', marginTop: '16px' }}>+</Button>
+      <AppModal open={isOpen} onClose={handleCloseModal} />
+    </div>
+
+
               </div>       
             </AppSwiperSlide>           
         ))}      

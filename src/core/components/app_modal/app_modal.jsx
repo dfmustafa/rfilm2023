@@ -1,39 +1,38 @@
-import React from 'react'
-import { createPortal } from 'react-dom'
+import React from 'react';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
-const AppModal = ({children, onClicketOut = ()=>{},open}) => {
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
+const AppModal = ({ open, onClose }) => {
   return (
-    <>
-    {open && createPortal(
-        <div 
-            onClick={(e)=>{
-                console.log(" target");
-                console.log(e.target);
-                console.log("current target");
-                console.log(e.currentTarget);
-                if(e.target === e.currentTarget){
-                    onClicketOut();
-                }
-            }}
-            style= {{
-                position: "fixed", 
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                top: 0, 
-                left: 0, 
-                right: 0, 
-                bottom: 0, 
-                width: "100%", 
-                height: "100%",
-                background: "rgba(0,0,0, 0.5)", 
-                zIndex: 1000}}>
-             {children}
-        </div>,document.body
-    )}
+    <Modal
+      open={open}
+      onClose={onClose}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <div style={style}>
+        <Typography id="modal-modal-title" variant="h6" component="h2">
+          Form Modal
+        </Typography>
+        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          descripcion.
+        </Typography>
+      </div>
+    </Modal>
+  );
+};
 
-    </>
-  )
-}
-
-export default AppModal
+export default AppModal;

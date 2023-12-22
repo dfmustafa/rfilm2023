@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr';
+import { red } from '@mui/material/colors';
 
-import { UseModal } from '../../../core/components/app_modal/hook/use_modal';
 import { getPopularMovies, getTopRatedMovies, getUpcomingMovies } from '../services/movies.services';
 import { getPopularTv, getTopRatedTv, getAiringTodayTv } from '../services/tv.services';
 
 import AppCarouselSection from '../../../core/components/app_carousel_section/app_carousel_section';
-import AppCard from '../../../core/components/app_card/app_card';
 import AppNavbar from '../../../core/components/app_navbar/app_navbar';
 import AppFooter from '../../../core/components/app_footer/app_footer';
-import AppModal from '../../../core/components/app_modal/app_modal';
-import { red } from '@mui/material/colors';
+
+
 import AppBanner from '../../../core/components/app_banner/app_banner';
 
 const HomeView = () => {
-
-  const {isOpen, openModal, closeModal} = UseModal();
 
   const {data: popularMovies, error: popularMoviewError, isLoading: isLoadingPopularMovies
   } = useSWR('popularMovies', getPopularMovies);

@@ -10,7 +10,7 @@ const Footer = ({children, ...props}) => {
       {...props} 
       style={{ 
         padding : "8px" , 
-        borderTop : "1px solid #ccc",
+        borderTop : "1px solid #fff",
         backdropFilter : "blur(2px)", 
         opacity : isHovered ? 1 : 0,
         transform : isHovered ? "translateY(0)" : "translateY(10px)",

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const UseModal = ()=>{
+export const UseModalPortal = ()=>{
     const [isOpen, setIsOpen] = useState(true);
 
     return {
