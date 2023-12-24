@@ -45,7 +45,7 @@ const AppCard = ({
           borderRadius,
           borderColor,          
           borderStyle: isHovered ? 'solid' : 'none' , 
-          margin: '5px',
+          margin: '8px',
           transform: isHovered ? "scale(1.10)" : "scale(1)",  
           transition: "transform 0.2s ease-in-out",        
           overflow: 'hidden',                 
