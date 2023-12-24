@@ -5,10 +5,11 @@ import AppTitle from '../app_title/app_title'
 import AppCard from '../app_card/app_card'
 import { sizes, colors } from '../../constants'
 
-
 import Button from '@mui/material/Button';
 import useModal from '../app_modal/hook/useModal'
 import AppModal from '../app_modal/app_modal'
+import { IconButton } from '@mui/material'
+import { PlayArrow, StarBorder } from '@mui/icons-material'
 const AppCarouselSection = ({title, data, style  }) => {
 
   const { isOpen, openModal, closeModal } = useModal();
@@ -37,9 +38,16 @@ const AppCarouselSection = ({title, data, style  }) => {
                 <AppCard.Header>
                   <AppTitle  size={sizes.sm} micolor={colors.white}> { e.title}</AppTitle>
                 </AppCard.Header>
-                <AppCard.Footer>footer
-               
-               
+                <AppCard.Footer>
+                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <IconButton onClick={handleOpenModal} style={{ backgroundColor: '#E50914', color: '#FFF',marginTop: '5px', marginRight: '10px'}}>
+                  <PlayArrow />
+                </IconButton>
+                <IconButton  style={{ backgroundColor: '#E50914', color: '#FFF', marginTop: '5px' }}>
+                 <StarBorder />
+                </IconButton>
+                </div>
+      <AppModal open={isOpen} onClose={handleCloseModal} />
                    
                 </AppCard.Footer>
                
@@ -59,8 +67,7 @@ const AppCarouselSection = ({title, data, style  }) => {
                 {e.title}
 
                 <div>
-      <Button onClick={handleOpenModal} style={{ backgroundColor: '#E50914', color: '#FFF', marginTop: '16px' }}>+</Button>
-      <AppModal open={isOpen} onClose={handleCloseModal} />
+                
     </div>
 
 

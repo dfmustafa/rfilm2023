@@ -9,8 +9,8 @@ const Header = ({children, ...props}) => {
     <section     
       {...props} 
       style={{ 
-        padding : "6px" , 
-        borderBottom : "1px solid #fff",
+        padding : "5px" , 
+        borderBottom : "1px none #fff",
         backdropFilter : "blur(2px)", 
         opacity : isHovered ? 1 : 0,
         transform : isHovered ? "translateY(0)" : "translateY(-10px)",
